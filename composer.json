@@ -1,0 +1,13 @@
+{
+    "name": "bogrodev/tools-form",
+    "description": "outil pour la gestion des formulaires",
+    "type": "composer-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christian Bogro",
+            "email": "cb@link2b.fr"
+        }
+    ],
+    "require": {}
+}
