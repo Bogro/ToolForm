@@ -17,7 +17,7 @@ $form->label('input or name: ');
 //Input text
 $form->inputText('cool');
 
-//Bottom submit 
+//Bottom submit
 $form->submit(['value' => 'submit']);
 
 //Close the form

@@ -9,7 +9,9 @@
             "email": "cb@link2b.fr"
         }
     ],
-    "require": {},
+    "require": {
+        "php": ">=5.5.9"
+    },
     "require-dev": {
         "phpunit/phpunit": "^6.4"
     },
