@@ -84,7 +84,7 @@ class ToolForm
      * @param $name
      * @param array $param
      */
-    public function inputText($name,$param = [])
+    public function inputText($name, $param = [])
     {
         ?>
         <input type="text" name="<?= $name ?>"  <?= $this->parametre($param) ?> />
@@ -96,7 +96,7 @@ class ToolForm
      * @param $name
      * @param array $param
      */
-    public function inputPassword($name,$param = [])
+    public function inputPassword($name, $param = [])
     {
         ?>
         <input type="password" name="<?= $name ?>"  <?= $this->parametre($param) ?>/>
@@ -107,7 +107,7 @@ class ToolForm
      * @param $name
      * @param array $param
      */
-    public function inputEmail($name,$param = [])
+    public function inputEmail($name, $param = [])
     {
         ?>
         <input type="email" name="<?= $name ?>"  <?= $this->parametre($param) ?>/>
@@ -183,28 +183,33 @@ class ToolForm
      * @param array $param
      * @param array $list
      */
-    public function inputList($name,$param = [], $list = [])
+    public function inputList($name, $param = [], $list = [])
     {
         ?>
         <input list="mylist" name="<?= $name ?>" <?= $this->parametre($param) ?> />
         <datalist id="mylist">
             <?php foreach ($list as $value): ?>
             <option value="<?= $value ?>">
-                <?php endforeach; ?>
+            <?php endforeach; ?>
         </datalist>
         <?php
     }
 
 
     /**
-     * @param $for
+     * Label de la balise input
+     *
      * @param $text
      * @param array $param
+     * @param $for
      */
-    public function label($for, $text, $param=[])
+    public function label($text, $param = [], $for = '')
     {
+
+        $for = (!empty($for))? '' : 'for="' . $for . '"';
+
         ?>
-        <label for="<?= $for ?>" <?= $this->parametre($param) ?> ><?= $text ?></label>
+        <label <?= $for ?> <?= $this->parametre($param) ?> ><?= $text ?></label>
         <?php
     }
 
@@ -230,7 +235,7 @@ class ToolForm
     }
 
     /**
-     *
+     * Pour fermer la balise form
      */
     public function FormEnd()
     {
