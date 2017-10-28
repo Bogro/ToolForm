@@ -6,7 +6,11 @@
  * Time: 16:39
  */
 
-class ToolFormTest
-{
+use PHPUnit\Framework\TestCase;
 
+class ToolFormTest extends TestCase
+{
+    public function Testparametre(){
+        
+    }
 }

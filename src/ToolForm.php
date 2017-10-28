@@ -11,15 +11,15 @@ namespace ToolForm;
 
 class ToolForm
 {
-    private $key_token;
+    private $key_csfr;
 
     /**
      * Form constructor.
      * @param $key_token
      */
-    public function __construct($key_token)
+    public function __construct($key_csfr)
     {
-        $this->key_token = $key_token;
+        $this->key_csfr = $key_csfr;
     }
 
     #Methode private
@@ -30,7 +30,7 @@ class ToolForm
     private function inputHidden()
     {
         ?>
-        <input type="hidden" name="_token" value="<?= $this->key_token ?>"/>
+        <input type="hidden" name="_token" value="<?= $this->key_csfr ?>"/>
         <?php
     }
 
@@ -65,6 +65,7 @@ class ToolForm
         ?>
         <form method="GET" action"<?= $url ?>" <?= $this->parametre($param) ?> >
         <?php
+        $this->inputHidden();
     }
 
     /**
