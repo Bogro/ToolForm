@@ -7,10 +7,20 @@ $token_csfr = substr(str_shuffle(str_repeat('0123456789abcdefghijklmnopqrstuvwxy
 
 $form = new ToolForm\ToolForm($token_csfr);
 
+
+//Open the form
 $form->FormPost('/' );
+
+//Label of a input
 $form->label('input or name: ');
+
+//Input text
 $form->inputText('cool');
+
+//Bottom submit 
 $form->submit(['value' => 'submit']);
+
+//Close the form
 $form->FormEnd();
 
 
