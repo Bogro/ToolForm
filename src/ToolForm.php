@@ -25,7 +25,7 @@ class ToolForm
     #Methode private
 
     /**
-     *
+     * Input de type hidden pout stocker la clef csfr
      */
     private function inputHidden()
     {
@@ -52,6 +52,16 @@ class ToolForm
 
         }
 
+    }
+
+    /**
+     * @param $name
+     * @throws ToolFormExeption
+     */
+    private function verificationName($name){
+        if (empty($name)){
+            throw new ToolFormExeption('Il manque la valeur name de la balise input');
+        }
     }
 
     #methode public
@@ -86,6 +96,7 @@ class ToolForm
      */
     public function inputText($name, $param = [])
     {
+        $this->verificationName($name);
         ?>
         <input type="text" name="<?= $name ?>"  <?= $this->parametre($param) ?> />
         <?php
@@ -98,6 +109,7 @@ class ToolForm
      */
     public function inputPassword($name, $param = [])
     {
+        $this->verificationName($name);
         ?>
         <input type="password" name="<?= $name ?>"  <?= $this->parametre($param) ?>/>
         <?php
@@ -109,6 +121,7 @@ class ToolForm
      */
     public function inputEmail($name, $param = [])
     {
+        $this->verificationName($name);
         ?>
         <input type="email" name="<?= $name ?>"  <?= $this->parametre($param) ?>/>
         <?php
@@ -121,6 +134,10 @@ class ToolForm
      */
     public function inputOther($type,$name,$param = [])
     {
+        if (empty($type)){
+            throw new ToolFormExeption('Type in difine');
+        }
+        $this->verificationName($name);
         ?>
         <input type="<?= $type ?>" name="<?= $name ?>"  <?= $this->parametre($param) ?>/>
         <?php
@@ -132,6 +149,7 @@ class ToolForm
      */
     public function inputRadio($name,$param = [])
     {
+        $this->verificationName($name);
         ?>
         <input type="radio" name="<?= $name ?>"  <?= $this->parametre($param) ?>/>
         <?php
@@ -144,6 +162,7 @@ class ToolForm
      */
     public function inputCheckbox($name,$param = [])
     {
+        $this->verificationName($name);
         ?>
         <input type="checkbox" name="<?= $name ?>" <?= $this->parametre($param) ?> />
         <?php
@@ -156,6 +175,7 @@ class ToolForm
      */
     public function select($name,$option = [], $param = [])
     {
+        $this->verificationName($name);
         ?>
         <select name="<?= $name ?>" <?= $this->parametre($param) ?> >
             <?php foreach ($option as $key => $value): ?>
@@ -172,6 +192,7 @@ class ToolForm
      */
     public function textarea($name, $param = [])
     {
+        $this->verificationName($name);
         ?>
         <textarea name="<?= $name ?>"  <?= $this->parametre($param) ?> ></textarea>
         <?php
@@ -185,6 +206,7 @@ class ToolForm
      */
     public function inputList($name, $param = [], $list = [])
     {
+        $this->verificationName($name);
         ?>
         <input list="mylist" name="<?= $name ?>" <?= $this->parametre($param) ?> />
         <datalist id="mylist">
@@ -205,7 +227,7 @@ class ToolForm
      */
     public function label($text, $param = [], $for = '')
     {
-
+        if (empty($text)){ throw new ToolFormExeption('The text of label indifine'); }
         $for = (!empty($for))? '' : 'for="' . $for . '"';
 
         ?>

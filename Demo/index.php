@@ -9,7 +9,7 @@ $form = new ToolForm\ToolForm($token_csfr);
 
 $form->FormPost('/' );
 $form->label('input or name: ');
-$form->inputText('name');
+$form->inputText('cool');
 $form->submit(['value' => 'submit']);
 $form->FormEnd();
 
