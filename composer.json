@@ -1,5 +1,5 @@
 {
-    "name": "bogrodev/tools-form",
+    "name": "bogro/tools-form",
     "description": "outil pour la gestion des formulaires",
     "type": "composer-plugin",
     "license": "MIT",
@@ -9,6 +9,7 @@
             "email": "bogrolcr@gmail.com"
         }
     ],
+    "minimum-stability": "dev",
     "require": {
         "php": ">=5.5.9"
     },
