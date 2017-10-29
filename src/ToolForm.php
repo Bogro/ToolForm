@@ -131,6 +131,7 @@ class ToolForm
      * @param $type
      * @param $name
      * @param array $param
+     * @throws ToolFormExeption
      */
     public function inputOther($type,$name,$param = [])
     {
@@ -223,7 +224,8 @@ class ToolForm
      *
      * @param $text
      * @param array $param
-     * @param $for
+     * @param string $for
+     * @throws ToolFormExeption
      */
     public function label($text, $param = [], $for = '')
     {
