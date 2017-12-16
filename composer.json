@@ -1,7 +1,7 @@
 {
     "name": "bogro/tools-form",
     "description": "outil pour la gestion des formulaires",
-    "type": "composer-plugin",
+    "type": "library",
     "license": "MIT",
     "authors": [
         {
